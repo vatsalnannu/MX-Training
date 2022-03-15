@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking</title>
+    <script>
+        document.write("Banking App");
+        document.write("<br>")
+        function banking(){
+            this.balance=0
+            this.opena = function(openb){
+                this.balance=openb;
+                document.write("Account opened opening balance:"+this.balance);
+            }
+            this.withdraw = function(amt){
+                if(amt>this.balance){
+                    document.write("Not enough balance.");
+                }
+                else{
+                    this.balance=this.balance-amt;
+                    document.write("Your updated balance is: " + this.balance);
+                }
+            }
+            this.deposit = function(amt){
+                this.balance=this.balance+amt;
+                document.write("Your updated balance is:" + this.balance);
+            }
+        }
+        var acc = new banking();
+        acc.opena(1000);
+        document.write("<br>");
+        document.write("<br>");
+        acc.withdraw(2000);
+        document.write("<br>");
+        document.write("<br>");
+        acc.withdraw(200);
+        document.write("<br>");
+        document.write("<br>");
+        acc.deposit(10000);
+        document.write("<br>");
+        document.write("<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
